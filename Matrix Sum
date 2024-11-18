@@ -1,0 +1,9 @@
+def calculate_resultant_array(n, matrix):
+    row_sums = [sum(row) for row in matrix]
+    column_sums = [sum(matrix[i][j] for i in range(n)) for j in range(n)]
+    result = [row_sums[i]+column_sums[i] for i in range(n)]
+    return result
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+result = calculate_resultant_array(n, matrix)
+print(" ".join(map(str, result)))
