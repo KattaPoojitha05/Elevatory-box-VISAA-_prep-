@@ -1,0 +1,9 @@
+def largest_triangle(n, x):
+    x.sort(reverse=True)
+    for i in range(n - 2):
+        if x[i] < x[i + 1] + x[i + 2]:
+            return x[i]+x[i+1]+x[i+2]
+    return -1
+n = int(input())
+x = list(map(int, input().split()))
+print(largest_triangle(n, x))
